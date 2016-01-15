@@ -9,13 +9,18 @@
   <meta name="author" content="北漂一族">
 
   
-  <meta name="description" content="下载并安装Ruby 下载ruby 1.9.31
-wget https://cache.ruby-lang.org/pub/ruby/1.9/ruby-1.9.3-p551.tar.bz2 安装ruby 1.9.31
+  <meta name="description" content="下载并安装Ruby 1
 2
 3
 4
 5
-tar -jxvf ruby-1.9.3-p551.tar.bz2 &hellip;">
+6
+7
+8
+# 下载ruby 1.9.3
+wget https://cache.ruby-lang.org/pub/ruby/1.9/ruby-1.9.3-p551.tar.bz2
+# bash 安装ruby 1.9.3
+tar -jxvf ruby-1.9 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -102,17 +107,18 @@ tar -jxvf ruby-1.9.3-p551.tar.bz2 &hellip;">
 
   <div class="entry-content"><p>下载并安装Ruby</p>
 
-<figure class='code'><figcaption><span>下载ruby 1.9.3</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>wget https://cache.ruby-lang.org/pub/ruby/1.9/ruby-1.9.3-p551.tar.bz2
-</span></code></pre></td></tr></table></div></figure>
-
-
-<figure class='code'><figcaption><span>安装ruby 1.9.3</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>tar -jxvf ruby-1.9.3-p551.tar.bz2
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c"># 下载ruby 1.9.3</span>
+</span><span class='line'>wget https://cache.ruby-lang.org/pub/ruby/1.9/ruby-1.9.3-p551.tar.bz2
+</span><span class='line'><span class="c"># bash 安装ruby 1.9.3</span>
+</span><span class='line'>tar -jxvf ruby-1.9.3-p551.tar.bz2
 </span><span class='line'><span class="nb">cd </span>ruby-1.9.3-p551/
 </span><span class='line'>./configure --prefix<span class="o">=</span>/usr/local/ruby
 </span><span class='line'>make -j4
@@ -128,21 +134,21 @@ export RUBY_HOME PATH</p>
 
 <p>更新配置</p>
 
-<figure class='code'><figcaption><span>/etc/profile</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">source</span> /etc/profile
 </span></code></pre></td></tr></table></div></figure>
 
 
 <p>装好后，直接去Github clone一个octopress到你的机器</p>
 
-<figure class='code'><figcaption><span>git clone</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='bash'><span class='line'>git clone https://github.com/imathis/octopress.git
 </span></code></pre></td></tr></table></div></figure>
 
 
 <p>Clone好后，需要先安装一下octopress所需要用到的gem包，先进入octopress目录，运行命令：</p>
 
-<figure class='code'><figcaption><span>软件更新的源</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 </pre></td><td class='code'><pre><code class='bash'><span class='line'>gem sources -a http://ruby.taobao.org/
@@ -158,28 +164,28 @@ gem &lsquo;execjs&rsquo;
 gem &lsquo;therubyracer&rsquo;
 然后安装，过程依然很漫长，候着</p>
 
-<figure class='code'><figcaption><span>安装</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='bash'><span class='line'>bundle install
 </span></code></pre></td></tr></table></div></figure>
 
 
 <p>如果提示bundle找不到，执行</p>
 
-<figure class='code'><figcaption><span>安装</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='bash'><span class='line'>gem install bundle
 </span></code></pre></td></tr></table></div></figure>
 
 
 <p>安装默认主题</p>
 
-<figure class='code'><figcaption><span>默认主题</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='bash'><span class='line'>rake install
 </span></code></pre></td></tr></table></div></figure>
 
 
 <p>如果提示rake找不到，执行</p>
 
-<figure class='code'><figcaption><span>默认主题</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='bash'><span class='line'>gem install rake
 </span></code></pre></td></tr></table></div></figure>
 
