@@ -18,10 +18,9 @@
 7
 8
 9
-10
-11
 # 下载ruby 1.9.3
-wget https://cache.ruby-lang.org/pub/ruby/1.9/ruby-1.9.3-p551.tar.bz2 &lt;!-- more --&gt; # bash &hellip;">
+wget https://cache.ruby-lang.org/pub/ruby/1.9/ruby-1.9.3-p551.tar.bz2 # bash 安装ruby 1.9.3
+tar -jxvf ruby-1 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -117,12 +116,8 @@ wget https://cache.ruby-lang.org/pub/ruby/1.9/ruby-1.9.3-p551.tar.bz2 &lt;!-- mo
 <span class='line-number'>7</span>
 <span class='line-number'>8</span>
 <span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
 </pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c"># 下载ruby 1.9.3</span>
 </span><span class='line'>wget https://cache.ruby-lang.org/pub/ruby/1.9/ruby-1.9.3-p551.tar.bz2
-</span><span class='line'>
-</span><span class='line'>&lt;!-- more --&gt;
 </span><span class='line'>
 </span><span class='line'><span class="c"># bash 安装ruby 1.9.3</span>
 </span><span class='line'>tar -jxvf ruby-1.9.3-p551.tar.bz2
@@ -133,120 +128,12 @@ wget https://cache.ruby-lang.org/pub/ruby/1.9/ruby-1.9.3-p551.tar.bz2 &lt;!-- mo
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>添加环境变量，向/etc/profile添加一下3行</p>
-
-<p>RUBY_HOME=/usr/local/ruby</p>
-
-<p>PATH=$PATH:$RUBY_HOME/bin</p>
-
-<p>export RUBY_HOME PATH</p>
-
-<p>更新配置</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">source</span> /etc/profile
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>装好后，直接去Github clone一个octopress到你的机器</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>git clone https://github.com/imathis/octopress.git
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Clone好后，需要先安装一下octopress所需要用到的gem包，先进入octopress目录，运行命令：</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>gem sources -a http://ruby.taobao.org/
-</span><span class='line'>gem sources -r https://rubygems.org/
-</span><span class='line'>gem sources -l
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>修改Gemfile
-把第一行 <a href="https://rubygems.org">https://rubygems.org</a> 修改为 <a href="https://ruby.taobao.org">https://ruby.taobao.org</a>
-文件末尾添加</p>
-
-<p>gem &lsquo;execjs&rsquo;</p>
-
-<p>gem &lsquo;therubyracer&rsquo;</p>
-
-<p>然后安装，过程依然很漫长，候着</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>bundle install
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>如果提示bundle找不到，执行</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>gem install bundle
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>安装默认主题</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>rake install
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>如果提示rake找不到，执行</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>gem install rake
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>写第一篇文章</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>rake new_post <span class="o">[</span><span class="s1">&#39;Hello World&#39;</span><span class="o">]</span>
-</span><span class='line'>vim <span class="nb">source</span>/_posts/2014-07-04-hello-world.markdown
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>生成blog的静态文件：</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>rake generate
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>生成预览</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>rake preview
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p><a href="http://ip:4000">http://ip:4000</a> 访问看看吧</p>
-
-<p>同步到github上的步骤，执行</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>rake setup_github_pages
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>根据提示输入你的github仓库地址，比如git@github.com:your_username/your_username.github.com.git
-然后执行</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>rake deploy
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>就可以提交到github上
-在浏览器中输入你的域名就可以访问了
-比如 your_username.github.com</p>
-</div>
+<p> </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2016/01/15/an-zhuang-octopress/">阅读全文 &rarr;</a>
+    </footer>
   
 
 
