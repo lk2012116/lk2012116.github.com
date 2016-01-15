@@ -40,7 +40,7 @@ Test
   <header role="banner"><hgroup>
   <h1><a href="/">^北^漂^一^族</a></h1>
   
-    <h2>A blogging framework for hackers.</h2>
+    <h2>http://www.linuxkvm.tk</h2>
   
 </hgroup>
 
@@ -448,123 +448,12 @@ Test</p>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>3.下载源代码</p>
-
-<figure class='code'><figcaption><span>下载源代码</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>wget http://mirrors.sohu.com/mysql/MySQL-5.6/mysql-5.6.19.tar.gz
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>4.创建安装目录、数据目录和sock目录权限，设置权限</p>
-
-<figure class='code'><figcaption><span>设置目录权限</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>mkdir -p /data/mysql/data
-</span><span class='line'>chown -R root.mysql /data/mysql
-</span><span class='line'>chown -R mysql.mysql /data/mysql/data
-</span><span class='line'>mkdir -p /var/lib/mysql/
-</span><span class='line'>chown -R mysql.mysql /var/lib/mysql/
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>5.编译安装mysql</p>
-
-<figure class='code'><figcaption><span>编译安装</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c">#解压安装包</span>
-</span><span class='line'>tar zxvf mysql-5.6.19.tar.gz
-</span><span class='line'><span class="c">#检查编译环境</span>
-</span><span class='line'>cmake . -DCMAKE_INSTALL_PREFIX<span class="o">=</span>/data/mysql/ <span class="se">\</span>
-</span><span class='line'>-DMYSQL_DATADIR<span class="o">=</span>/data/mysql/data/ <span class="se">\</span>
-</span><span class='line'>-DDEFAULT_CHARSET<span class="o">=</span>utf8 <span class="se">\</span>
-</span><span class='line'>-DWITH_EXTRA_CHARSETS<span class="o">=</span>all <span class="se">\</span>
-</span><span class='line'>-DDEFAULT_COLLATION<span class="o">=</span>utf8_general_ci <span class="se">\</span>
-</span><span class='line'>-DWITH_LIBWRAP<span class="o">=</span>/lib64/libwrap.so.0 <span class="se">\</span>
-</span><span class='line'>-DMYSQL_UNIX_ADDR<span class="o">=</span>/var/lib/mysql/mysql.sock <span class="se">\</span>
-</span><span class='line'>-DWITH_SSL<span class="o">=</span>yes -DWITH_INNOBASE_STORAGE_ENGINE<span class="o">=</span><span class="m">1</span> <span class="se">\</span>
-</span><span class='line'>-DWITH_ARCHIVE_STORAGE_ENGINE<span class="o">=</span><span class="m">1</span> <span class="se">\</span>
-</span><span class='line'>-DWITH_BLACKHOLE_STORAGE_ENGINE<span class="o">=</span><span class="m">1</span> <span class="se">\</span>
-</span><span class='line'>-DWITH_PERFSCHEMA_STORAGE_ENGINE<span class="o">=</span>1
-</span><span class='line'><span class="c">#编译</span>
-</span><span class='line'>make
-</span><span class='line'><span class="c">#安装</span>
-</span><span class='line'>make install
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>6.初始化Mysql</p>
-
-<figure class='code'><figcaption><span>初始化mysql</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>/data/mysql/scripts/mysql_install_db --basedir<span class="o">=</span>/data/mysql//data/mysql/data --datadir<span class="o">=</span>/data/mysql/data --user<span class="o">=</span>mysql
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>7.设置相关配置文件</p>
-
-<figure class='code'><figcaption><span>config</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c">#复制my.cnf</span>
-</span><span class='line'>cp /data/mysql/support-files/my-default.cnf /etc/my.cnf
-</span><span class='line'><span class="c">#复制启动脚本并设置开机启动</span>
-</span><span class='line'>cp /data/mysql/support-files/mysql.server /etc/init.d/mysqld
-</span><span class='line'>chmod +x /etc/init.d/mysqld
-</span><span class='line'>chkconfig --add mysqld
-</span><span class='line'>chkconfig mysqld on
-</span><span class='line'>service mysqld start
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>8.设置管理员密码、设置远程访问</p>
-
-<figure class='code'><figcaption><span>password</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c">#登录到mysql，此时mysql是空密码</span>
-</span><span class='line'>mysql
-</span><span class='line'><span class="c">#切换到mysql库</span>
-</span><span class='line'>&gt; use mysql<span class="p">;</span>
-</span><span class='line'><span class="c">#设置root密码</span>
-</span><span class='line'>&gt; update user <span class="nb">set </span><span class="nv">password</span><span class="o">=</span>password<span class="o">(</span><span class="s2">&quot;www.linuxkvm.tk&quot;</span><span class="o">)</span> where <span class="nv">user</span><span class="o">=</span><span class="s2">&quot;root&quot;</span><span class="p">;</span>
-</span><span class='line'><span class="c">#设置远程访问</span>
-</span><span class='line'>&gt; grant all privileges on *.* to <span class="s1">&#39;root&#39;</span>@<span class="s1">&#39;%&#39;</span> identified by <span class="s1">&#39;www.linuxkvm.tk&#39;</span><span class="p">;</span>
-</span><span class='line'><span class="c">#刷新权限</span>
-</span><span class='line'>&gt; flush privileges<span class="p">;</span>
-</span></code></pre></td></tr></table></div></figure>
-
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2014/07/04/mysqlyuan-ma-an-zhuang/">阅读更多 &rarr;</a>
+    </footer>
   
 
 

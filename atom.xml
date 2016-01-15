@@ -4,7 +4,7 @@
   <title><![CDATA[^北^漂^一^族]]></title>
   <link href="http://www.linuxkvm.tk/atom.xml" rel="self"/>
   <link href="http://www.linuxkvm.tk/"/>
-  <updated>2016-01-15T11:29:47+08:00</updated>
+  <updated>2016-01-15T12:06:27+08:00</updated>
   <id>http://www.linuxkvm.tk/</id>
   <author>
     <name><![CDATA[北漂一族]]></name>
@@ -233,6 +233,9 @@ Test</p>
 </pre></td><td class='code'><pre><code class='bash'><span class='line'>groupadd mysql
 </span><span class='line'>useradd -g mysql mysql -s /sbin/nologin
 </span></code></pre></td></tr></table></div></figure>
+
+
+<!-- more -->
 
 
 <p>3.下载源代码</p>
