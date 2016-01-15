@@ -1,0 +1,787 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>My Octopress Blog</title>
+  <meta name="author" content="Your Name">
+
+  
+  <meta name="description" content="打印最长的行1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+//打印最长的文本行 # &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://yoursite.com">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<! --link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css" -->
+<link href="/stylesheets/google-fonts.css" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">My Octopress Blog</a></h1>
+  
+    <h2>A blogging framework for hackers.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">订阅</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:yoursite.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">首页</a></li>
+  <li><a href="/blog/archives">归档</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/08/04/print-longest-line/">菜鸟学习C语言----打印最长的行</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-08-04T12:01:08+08:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><figure class='code'><figcaption><span>打印最长的行</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="c1">//打印最长的文本行</span>
+</span><span class='line'>
+</span><span class='line'><span class="cp">#include &lt;stdio.h&gt;</span>
+</span><span class='line'><span class="cp">#define MAXLINE 1000</span>
+</span><span class='line'>
+</span><span class='line'><span class="kt">int</span> <span class="nf">getline1</span><span class="p">(</span><span class="kt">char</span> <span class="n">line</span><span class="p">[],</span><span class="kt">int</span> <span class="n">maxline</span><span class="p">);</span>
+</span><span class='line'><span class="kt">void</span> <span class="nf">copy</span><span class="p">(</span><span class="kt">char</span> <span class="n">to</span><span class="p">[],</span> <span class="kt">char</span> <span class="n">from</span><span class="p">[]);</span>
+</span><span class='line'>
+</span><span class='line'><span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="kt">int</span> <span class="n">len</span><span class="p">;</span>
+</span><span class='line'>  <span class="kt">int</span> <span class="n">max</span><span class="p">;</span>
+</span><span class='line'>  <span class="kt">char</span> <span class="n">line</span><span class="p">[</span><span class="n">MAXLINE</span><span class="p">];</span>
+</span><span class='line'>  <span class="kt">char</span> <span class="n">longest</span><span class="p">[</span><span class="n">MAXLINE</span><span class="p">];</span>
+</span><span class='line'>  <span class="k">while</span><span class="p">((</span><span class="n">len</span><span class="o">=</span><span class="n">getline1</span><span class="p">(</span><span class="n">line</span><span class="p">,</span><span class="n">MAXLINE</span><span class="p">))</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>      <span class="k">if</span><span class="p">(</span><span class="n">len</span><span class="o">&gt;</span><span class="n">max</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>          <span class="n">max</span><span class="o">=</span><span class="n">len</span><span class="p">;</span>
+</span><span class='line'>          <span class="n">copy</span><span class="p">(</span><span class="n">longest</span><span class="p">,</span><span class="n">line</span><span class="p">);</span>
+</span><span class='line'>      <span class="p">}</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  <span class="k">if</span><span class="p">(</span><span class="n">max</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>      <span class="n">printf</span><span class="p">(</span><span class="s">&quot;最长的行是：%s长度为%d(其中包含换行符</span><span class="se">\\</span><span class="s">n)</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">longest</span><span class="p">,</span><span class="n">max</span><span class="p">);</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="kt">int</span> <span class="nf">getline1</span><span class="p">(</span><span class="kt">char</span> <span class="n">s</span><span class="p">[],</span><span class="kt">int</span> <span class="n">lim</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="kt">int</span> <span class="n">c</span><span class="p">;</span>
+</span><span class='line'>  <span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+</span><span class='line'>  <span class="c1">//当字符长度小于1000-1（main函数中定义的），及999的时候又同时满足不为结束符和换行符的时候，将字符写入字符数组s[]</span>
+</span><span class='line'>  <span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">lim</span><span class="o">-</span><span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">c</span><span class="o">=</span><span class="n">getchar</span><span class="p">())</span><span class="o">!=</span><span class="n">EOF</span> <span class="o">&amp;&amp;</span> <span class="n">c</span><span class="o">!=</span><span class="sc">&#39;\n&#39;</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>      <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">c</span><span class="p">;</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  <span class="c1">//当遇到换行符时for循环的条件就不能满足，此时将换行符写入字符数组，并加入字符数组的结束符\0</span>
+</span><span class='line'>  <span class="k">if</span><span class="p">(</span><span class="n">c</span><span class="o">==</span><span class="sc">&#39;\n&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>      <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">c</span><span class="p">;</span>
+</span><span class='line'>      <span class="n">i</span><span class="o">++</span><span class="p">;</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="sc">&#39;\0&#39;</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">return</span> <span class="n">i</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="kt">void</span> <span class="nf">copy</span><span class="p">(</span><span class="kt">char</span> <span class="n">to</span><span class="p">[],</span><span class="kt">char</span> <span class="n">from</span><span class="p">[])</span> <span class="p">{</span>
+</span><span class='line'>  <span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">while</span><span class="p">((</span><span class="n">to</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">from</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">!=</span><span class="sc">&#39;\0&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>      <span class="o">++</span><span class="n">i</span><span class="p">;</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Bug:如果有两行字符数目相同的行，只会打印第一次出现的</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/08/01/c02/">菜鸟学习C语言----关于EOF</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-08-01T15:03:08+08:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><figure class='code'><figcaption><span>关于EOF</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="cp">#include &lt;stdio.h&gt;</span>
+</span><span class='line'><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>  <span class="c1">//验证表达式getchar()!=EOF的值</span>
+</span><span class='line'>  <span class="kt">int</span> <span class="n">c</span><span class="o">=</span><span class="p">(</span><span class="n">getchar</span><span class="p">()</span><span class="o">!=</span><span class="n">EOF</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">c</span><span class="p">);</span>
+</span><span class='line'>  <span class="c1">//打印EOF的值</span>
+</span><span class='line'>  <span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="n">EOF</span><span class="p">;</span>
+</span><span class='line'>  <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">EOF</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/08/01/cc01/">菜鸟学习C语言----多个空格用一个空格代替</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-08-01T14:54:43+08:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><figure class='code'><figcaption><span>多个空格用一个空格代替</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="c1">//多个空格用一个空格代替</span>
+</span><span class='line'><span class="cp">#include &lt;stdio.h&gt;</span>
+</span><span class='line'><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="kt">int</span> <span class="n">c</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">while</span><span class="p">((</span><span class="n">c</span><span class="o">=</span><span class="n">getchar</span><span class="p">())</span><span class="o">!=</span><span class="n">EOF</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>      <span class="k">if</span><span class="p">(</span><span class="n">c</span><span class="o">==</span><span class="sc">&#39; &#39;</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>          <span class="n">putchar</span><span class="p">(</span><span class="n">c</span><span class="p">);</span>
+</span><span class='line'>          <span class="k">while</span><span class="p">((</span><span class="n">c</span> <span class="o">=</span> <span class="n">getchar</span><span class="p">())</span> <span class="o">==</span> <span class="sc">&#39; &#39;</span> <span class="o">&amp;&amp;</span> <span class="n">c</span><span class="o">!=</span><span class="n">EOF</span><span class="p">){</span>
+</span><span class='line'>              <span class="p">;</span>
+</span><span class='line'>          <span class="p">}</span>
+</span><span class='line'>      <span class="p">}</span>
+</span><span class='line'>      <span class="n">putchar</span><span class="p">(</span><span class="n">c</span><span class="p">);</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/07/07/cjzdwfsrmldwt/">超级终端无法输入命令的问题</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-07-07T11:54:48+08:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>今天上午折腾了一下公司的古董级设备fortigate 60B，</p>
+
+<p>找来串口线，找了一台XP（Windows 7上没有超级终端了）。</p>
+
+<p>打开超级终端，新建连接，选择每秒位数9600，确定，等了一会启动界面出来</p>
+
+<p>然后输入用户名，输入不了，于是百度，原来数据流控制不能使用硬件，而应该选择无</p>
+
+<p>于是重新建立连接，在选择每秒位数的同时，选择数据流控制为无，然后就能正常使用了</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/07/04/mysqlyuan-ma-an-zhuang/">Mysql源码安装</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-07-04T17:17:18+08:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>操作系统：CentOS 6.4</p>
+
+<p>1.安装依赖包</p>
+
+<figure class='code'><figcaption><span>安装依赖包</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>yum -y install ncurses-devel openssl openssl-devel cmake
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>2.用户设置</p>
+
+<figure class='code'><figcaption><span>添加mysql用户</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>groupadd mysql
+</span><span class='line'>useradd -g mysql mysql -s /sbin/nologin
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>3.下载源代码</p>
+
+<figure class='code'><figcaption><span>下载源代码</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>wget http://mirrors.sohu.com/mysql/MySQL-5.6/mysql-5.6.19.tar.gz
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>4.创建安装目录、数据目录和sock目录权限，设置权限</p>
+
+<figure class='code'><figcaption><span>设置目录权限</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>mkdir -p /data/mysql/data
+</span><span class='line'>chown -R root.mysql /data/mysql
+</span><span class='line'>chown -R mysql.mysql /data/mysql/data
+</span><span class='line'>mkdir -p /var/lib/mysql/
+</span><span class='line'>chown -R mysql.mysql /var/lib/mysql/
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>5.编译安装mysql</p>
+
+<figure class='code'><figcaption><span>编译安装</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c">#解压安装包</span>
+</span><span class='line'>tar zxvf mysql-5.6.19.tar.gz
+</span><span class='line'><span class="c">#检查编译环境</span>
+</span><span class='line'>cmake . -DCMAKE_INSTALL_PREFIX<span class="o">=</span>/data/mysql/ <span class="se">\</span>
+</span><span class='line'>-DMYSQL_DATADIR<span class="o">=</span>/data/mysql/data/ <span class="se">\</span>
+</span><span class='line'>-DDEFAULT_CHARSET<span class="o">=</span>utf8 <span class="se">\</span>
+</span><span class='line'>-DWITH_EXTRA_CHARSETS<span class="o">=</span>all <span class="se">\</span>
+</span><span class='line'>-DDEFAULT_COLLATION<span class="o">=</span>utf8_general_ci <span class="se">\</span>
+</span><span class='line'>-DWITH_LIBWRAP<span class="o">=</span>/lib64/libwrap.so.0 <span class="se">\</span>
+</span><span class='line'>-DMYSQL_UNIX_ADDR<span class="o">=</span>/var/lib/mysql/mysql.sock <span class="se">\</span>
+</span><span class='line'>-DWITH_SSL<span class="o">=</span>yes -DWITH_INNOBASE_STORAGE_ENGINE<span class="o">=</span><span class="m">1</span> <span class="se">\</span>
+</span><span class='line'>-DWITH_ARCHIVE_STORAGE_ENGINE<span class="o">=</span><span class="m">1</span> <span class="se">\</span>
+</span><span class='line'>-DWITH_BLACKHOLE_STORAGE_ENGINE<span class="o">=</span><span class="m">1</span> <span class="se">\</span>
+</span><span class='line'>-DWITH_PERFSCHEMA_STORAGE_ENGINE<span class="o">=</span>1
+</span><span class='line'><span class="c">#编译</span>
+</span><span class='line'>make
+</span><span class='line'><span class="c">#安装</span>
+</span><span class='line'>make install
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>6.初始化Mysql</p>
+
+<figure class='code'><figcaption><span>初始化mysql</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>/data/mysql/scripts/mysql_install_db --basedir<span class="o">=</span>/data/mysql//data/mysql/data --datadir<span class="o">=</span>/data/mysql/data --user<span class="o">=</span>mysql
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>7.设置相关配置文件</p>
+
+<figure class='code'><figcaption><span>config</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c">#复制my.cnf</span>
+</span><span class='line'>cp /data/mysql/support-files/my-default.cnf /etc/my.cnf
+</span><span class='line'><span class="c">#复制启动脚本并设置开机启动</span>
+</span><span class='line'>cp /data/mysql/support-files/mysql.server /etc/init.d/mysqld
+</span><span class='line'>chmod +x /etc/init.d/mysqld
+</span><span class='line'>chkconfig --add mysqld
+</span><span class='line'>chkconfig mysqld on
+</span><span class='line'>service mysqld start
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>8.设置管理员密码、设置远程访问</p>
+
+<figure class='code'><figcaption><span>password</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c">#登录到mysql，此时mysql是空密码</span>
+</span><span class='line'>mysql
+</span><span class='line'><span class="c">#切换到mysql库</span>
+</span><span class='line'>&gt; use mysql<span class="p">;</span>
+</span><span class='line'><span class="c">#设置root密码</span>
+</span><span class='line'>&gt; update user <span class="nb">set </span><span class="nv">password</span><span class="o">=</span>password<span class="o">(</span><span class="s2">&quot;www.linuxkvm.tk&quot;</span><span class="o">)</span> where <span class="nv">user</span><span class="o">=</span><span class="s2">&quot;root&quot;</span><span class="p">;</span>
+</span><span class='line'><span class="c">#设置远程访问</span>
+</span><span class='line'>&gt; grant all privileges on *.* to <span class="s1">&#39;root&#39;</span>@<span class="s1">&#39;%&#39;</span> identified by <span class="s1">&#39;www.linuxkvm.tk&#39;</span><span class="p">;</span>
+</span><span class='line'><span class="c">#刷新权限</span>
+</span><span class='line'>&gt; flush privileges<span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/07/04/an-zhuang-octopress/">安装Octopress</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-07-04T17:01:00+08:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>RVM</p>
+
+<figure class='code'><figcaption><span>RVM</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="se">\c</span>url -sSL https://get.rvm.io <span class="p">|</span> bash -s stable
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>添加环境变量，向/etc/profile添加一下3行</p>
+
+<figure class='code'><figcaption><span>/etc/profile</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">RVM_HOME</span><span class="o">=</span>/usr/local/rvm
+</span><span class='line'><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$RVM_HOME</span>/bin
+</span><span class='line'><span class="nb">export </span>RVM_HOME PATH
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>更新配置</p>
+
+<figure class='code'><figcaption><span>/etc/profile</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">source</span> /etc/profile
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>安装Ruby，过程很漫长，等吧</p>
+
+<figure class='code'><figcaption><span>安装ruby 1.9.3</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>rvm install 1.9.3
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>装好后，直接去Github clone一个octopress到你的机器</p>
+
+<figure class='code'><figcaption><span>git clone</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>git clone https://github.com/imathis/octopress.git
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Clone好后，需要先安装一下octopress所需要用到的gem包，先进入octopress目录，运行命令：</p>
+
+<figure class='code'><figcaption><span>软件更新的源</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>gem sources -a http://ruby.taobao.org/
+</span><span class='line'>gem sources -r https://rubygems.org/
+</span><span class='line'>gem sources -l
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>修改Gemfile
+把第一行<a href="https://rubygems.org">https://rubygems.org</a> 修改为 <a href="http://ruby.taobao.org">http://ruby.taobao.org</a>
+文件末尾添加</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>gem <span class="s1">&#39;execjs&#39;</span>
+</span><span class='line'>gem <span class="s1">&#39;therubyracer&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>然后安装，过程依然很漫长，候着</p>
+
+<figure class='code'><figcaption><span>安装</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>bundle install
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>安装默认主题</p>
+
+<figure class='code'><figcaption><span>默认主题</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>rake install
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>写第一篇文章</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>rake new_post <span class="o">[</span><span class="s1">&#39;Hello World&#39;</span><span class="o">]</span>
+</span><span class='line'>vim <span class="nb">source</span>/_posts/2014-07-04-hello-world.markdown
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>生成blog的静态文件：</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>rake generate
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>生成预览</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>rake preview
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><a href="http://ip:4000">http://ip:4000</a> 访问看看吧</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>最近...</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/08/04/print-longest-line/">菜鸟学习C语言----打印最长的行</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/08/01/c02/">菜鸟学习C语言----关于EOF</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/08/01/cc01/">菜鸟学习C语言----多个空格用一个空格代替</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/07/07/cjzdwfsrmldwt/">超级终端无法输入命令的问题</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/07/04/mysqlyuan-ma-an-zhuang/">Mysql源码安装</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2016 - Your Name -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '/javascripts/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
