@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://www.linuxkvm.tk/blog/2016/01/15/</loc>
-    <lastmod>2016-01-15T11:15:57+08:00</lastmod>
+    <loc>http://www.linuxkvm.tk/blog/2016/01/15/an-zhuang-octopress/</loc>
+    <lastmod>2016-01-15T13:35:00+08:00</lastmod>
   </url>
   <url>
     <loc>http://www.linuxkvm.tk/blog/2014/08/04/print-longest-line/</loc>
@@ -23,10 +23,6 @@
   <url>
     <loc>http://www.linuxkvm.tk/blog/2014/07/04/mysqlyuan-ma-an-zhuang/</loc>
     <lastmod>2014-07-04T17:17:18+08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://www.linuxkvm.tk/blog/2014/07/04/an-zhuang-octopress/</loc>
-    <lastmod>2014-07-04T17:01:00+08:00</lastmod>
   </url>
   <url>
     <loc>http://www.linuxkvm.tk/</loc>

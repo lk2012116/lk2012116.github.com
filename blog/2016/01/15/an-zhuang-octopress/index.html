@@ -9,12 +9,13 @@
   <meta name="author" content="北漂一族">
 
   
-  <meta name="description" content="RVM RVM1
-\curl -sSL https://get.rvm.io | bash -s stable 添加环境变量，向/etc/profile添加一下3行 /etc/profile1
+  <meta name="description" content="下载并安装Ruby 下载ruby 1.9.31
+wget https://cache.ruby-lang.org/pub/ruby/1.9/ruby-1.9.3-p551.tar.bz2 安装ruby 1.9.31
 2
 3
-RVM_HOME=/usr/local/rvm
-PATH=$PATH:$RVM_HOME/bin &hellip;">
+4
+5
+tar -jxvf ruby-1.9.3-p551.tar.bz2 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -23,7 +24,7 @@ PATH=$PATH:$RVM_HOME/bin &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://www.linuxkvm.tk/blog/2014/07/04/an-zhuang-octopress">
+  <link rel="canonical" href="http://www.linuxkvm.tk/blog/2016/01/15/an-zhuang-octopress">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="^北^漂^一^族" type="application/atom+xml">
@@ -89,42 +90,43 @@ PATH=$PATH:$RVM_HOME/bin &hellip;">
   
 
 
-<time datetime="2014-07-04T17:01:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2016-01-15T13:35:00+08:00" pubdate data-updated="true"></time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>RVM</p>
+<div class="entry-content"><p>下载并安装Ruby</p>
 
-<figure class='code'><figcaption><span>RVM</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="se">\c</span>url -sSL https://get.rvm.io <span class="p">|</span> bash -s stable
+<figure class='code'><figcaption><span>下载ruby 1.9.3</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>wget https://cache.ruby-lang.org/pub/ruby/1.9/ruby-1.9.3-p551.tar.bz2
+</span></code></pre></td></tr></table></div></figure>
+
+
+<figure class='code'><figcaption><span>安装ruby 1.9.3</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>tar -jxvf ruby-1.9.3-p551.tar.bz2
+</span><span class='line'><span class="nb">cd </span>ruby-1.9.3-p551/
+</span><span class='line'>./configure --prefix<span class="o">=</span>/usr/local/ruby
+</span><span class='line'>make -j4
+</span><span class='line'>make install
 </span></code></pre></td></tr></table></div></figure>
 
 
 <p>添加环境变量，向/etc/profile添加一下3行</p>
 
-<figure class='code'><figcaption><span>/etc/profile</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">RVM_HOME</span><span class="o">=</span>/usr/local/rvm
-</span><span class='line'><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$RVM_HOME</span>/bin
-</span><span class='line'><span class="nb">export </span>RVM_HOME PATH
-</span></code></pre></td></tr></table></div></figure>
-
+<p>RUBY_HOME=/usr/local/ruby
+PATH=$PATH:$RUBY_HOME/bin
+export RUBY_HOME PATH</p>
 
 <p>更新配置</p>
 
 <figure class='code'><figcaption><span>/etc/profile</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">source</span> /etc/profile
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>安装Ruby，过程很漫长，等吧</p>
-
-<figure class='code'><figcaption><span>安装ruby 1.9.3</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>rvm install 1.9.3
 </span></code></pre></td></tr></table></div></figure>
 
 
@@ -147,20 +149,21 @@ PATH=$PATH:$RVM_HOME/bin &hellip;">
 
 
 <p>修改Gemfile
-把第一行<a href="https://rubygems.org">https://rubygems.org</a> 修改为 <a href="http://ruby.taobao.org">http://ruby.taobao.org</a>
-文件末尾添加</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>gem <span class="s1">&#39;execjs&#39;</span>
-</span><span class='line'>gem <span class="s1">&#39;therubyracer&#39;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>然后安装，过程依然很漫长，候着</p>
+把第一行 <a href="https://rubygems.org">https://rubygems.org</a> 修改为 <a href="https://ruby.taobao.org">https://ruby.taobao.org</a>
+文件末尾添加
+gem &lsquo;execjs&rsquo;
+gem &lsquo;therubyracer&rsquo;
+然后安装，过程依然很漫长，候着</p>
 
 <figure class='code'><figcaption><span>安装</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='bash'><span class='line'>bundle install
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>如果提示bundle找不到，执行</p>
+
+<figure class='code'><figcaption><span>安装</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>gem install bundle
 </span></code></pre></td></tr></table></div></figure>
 
 
@@ -168,6 +171,13 @@ PATH=$PATH:$RVM_HOME/bin &hellip;">
 
 <figure class='code'><figcaption><span>默认主题</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='bash'><span class='line'>rake install
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>如果提示rake找不到，执行</p>
+
+<figure class='code'><figcaption><span>默认主题</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>gem install rake
 </span></code></pre></td></tr></table></div></figure>
 
 
@@ -195,6 +205,25 @@ PATH=$PATH:$RVM_HOME/bin &hellip;">
 
 
 <p><a href="http://ip:4000">http://ip:4000</a> 访问看看吧</p>
+
+<p>同步到github上的步骤，执行</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>rake setup_github_pages
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>根据提示输入你的github仓库地址，比如git@github.com:your_username/your_username.github.com.git
+然后执行</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>rake deploy
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>就可以提交到github上
+在浏览器中输入你的域名就可以访问了
+比如 your_username.github.com</p>
 </div>
 
 
@@ -217,7 +246,7 @@ PATH=$PATH:$RVM_HOME/bin &hellip;">
   
 
 
-<time datetime="2014-07-04T17:01:00+08:00" pubdate data-updated="true"></time>
+<time datetime="2016-01-15T13:35:00+08:00" pubdate data-updated="true"></time>
       
 
 
@@ -232,8 +261,8 @@ PATH=$PATH:$RVM_HOME/bin &hellip;">
     
     <p class="meta">
       
+        <a class="basic-alignment left" href="/blog/2014/08/04/print-longest-line/" title="Previous Post: 菜鸟学习C语言----打印最长的行">&laquo; 菜鸟学习C语言----打印最长的行</a>
       
-        <a class="basic-alignment right" href="/blog/2014/07/04/mysqlyuan-ma-an-zhuang/" title="Next Post: Mysql源码安装">Mysql源码安装 &raquo;</a>
       
     </p>
   </footer>
@@ -248,7 +277,7 @@ PATH=$PATH:$RVM_HOME/bin &hellip;">
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2016/01/15/"></a>
+        <a href="/blog/2016/01/15/an-zhuang-octopress/">安装Octopress</a>
       </li>
     
       <li class="post">
