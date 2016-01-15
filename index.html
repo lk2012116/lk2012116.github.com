@@ -17,10 +17,11 @@
 6
 7
 8
+9
+10
+11
 # 下载ruby 1.9.3
-wget https://cache.ruby-lang.org/pub/ruby/1.9/ruby-1.9.3-p551.tar.bz2
-# bash 安装ruby 1.9.3
-tar -jxvf ruby-1.9 &hellip;">
+wget https://cache.ruby-lang.org/pub/ruby/1.9/ruby-1.9.3-p551.tar.bz2 &lt;!-- more --&gt; # bash &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -115,8 +116,14 @@ tar -jxvf ruby-1.9 &hellip;">
 <span class='line-number'>6</span>
 <span class='line-number'>7</span>
 <span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
 </pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c"># 下载ruby 1.9.3</span>
 </span><span class='line'>wget https://cache.ruby-lang.org/pub/ruby/1.9/ruby-1.9.3-p551.tar.bz2
+</span><span class='line'>
+</span><span class='line'>&lt;!-- more --&gt;
+</span><span class='line'>
 </span><span class='line'><span class="c"># bash 安装ruby 1.9.3</span>
 </span><span class='line'>tar -jxvf ruby-1.9.3-p551.tar.bz2
 </span><span class='line'><span class="nb">cd </span>ruby-1.9.3-p551/
@@ -126,13 +133,15 @@ tar -jxvf ruby-1.9 &hellip;">
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>添加环境变量，向/etc/profile添加一下3行
-RUBY_HOME=/usr/local/ruby</p>
+<p>添加环境变量，向/etc/profile添加一下3行</p>
+
+<p>RUBY_HOME=/usr/local/ruby</p>
 
 <p>PATH=$PATH:$RUBY_HOME/bin</p>
 
-<p>export RUBY_HOME PATH
-更新配置</p>
+<p>export RUBY_HOME PATH</p>
+
+<p>更新配置</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">source</span> /etc/profile
@@ -159,10 +168,13 @@ RUBY_HOME=/usr/local/ruby</p>
 
 <p>修改Gemfile
 把第一行 <a href="https://rubygems.org">https://rubygems.org</a> 修改为 <a href="https://ruby.taobao.org">https://ruby.taobao.org</a>
-文件末尾添加
-gem &lsquo;execjs&rsquo;
-gem &lsquo;therubyracer&rsquo;
-然后安装，过程依然很漫长，候着</p>
+文件末尾添加</p>
+
+<p>gem &lsquo;execjs&rsquo;</p>
+
+<p>gem &lsquo;therubyracer&rsquo;</p>
+
+<p>然后安装，过程依然很漫长，候着</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='bash'><span class='line'>bundle install
