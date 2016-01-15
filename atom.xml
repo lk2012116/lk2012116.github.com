@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
+  <title><![CDATA[^北^漂^一^族]]></title>
   <link href="http://www.linuxkvm.tk/atom.xml" rel="self"/>
   <link href="http://www.linuxkvm.tk/"/>
-  <updated>2016-01-15T11:17:18+08:00</updated>
+  <updated>2016-01-15T11:29:47+08:00</updated>
   <id>http://www.linuxkvm.tk/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[北漂一族]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
