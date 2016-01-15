@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[My Octopress Blog]]></title>
-  <link href="http://yoursite.com/atom.xml" rel="self"/>
-  <link href="http://yoursite.com/"/>
-  <updated>2016-01-15T10:57:01+08:00</updated>
-  <id>http://yoursite.com/</id>
+  <link href="http://www.linuxkvm.tk/atom.xml" rel="self"/>
+  <link href="http://www.linuxkvm.tk/"/>
+  <updated>2016-01-15T11:17:18+08:00</updated>
+  <id>http://www.linuxkvm.tk/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
     
@@ -14,10 +14,20 @@
 
   
   <entry>
+    <title type="html"><![CDATA[]]></title>
+    <link href="http://www.linuxkvm.tk/blog/2016/01/15/"/>
+    <updated>2016-01-15T11:15:57+08:00</updated>
+    <id>http://www.linuxkvm.tk/blog/2016/01/</id>
+    <content type="html"><![CDATA[<p>测试
+Test</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[菜鸟学习C语言----打印最长的行]]></title>
-    <link href="http://yoursite.com/blog/2014/08/04/print-longest-line/"/>
+    <link href="http://www.linuxkvm.tk/blog/2014/08/04/print-longest-line/"/>
     <updated>2014-08-04T12:01:08+08:00</updated>
-    <id>http://yoursite.com/blog/2014/08/04/print-longest-line</id>
+    <id>http://www.linuxkvm.tk/blog/2014/08/04/print-longest-line</id>
     <content type="html"><![CDATA[<figure class='code'><figcaption><span>打印最长的行</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -119,9 +129,9 @@
   
   <entry>
     <title type="html"><![CDATA[菜鸟学习C语言----关于EOF]]></title>
-    <link href="http://yoursite.com/blog/2014/08/01/c02/"/>
+    <link href="http://www.linuxkvm.tk/blog/2014/08/01/c02/"/>
     <updated>2014-08-01T15:03:08+08:00</updated>
-    <id>http://yoursite.com/blog/2014/08/01/c02</id>
+    <id>http://www.linuxkvm.tk/blog/2014/08/01/c02</id>
     <content type="html"><![CDATA[<figure class='code'><figcaption><span>关于EOF</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -147,9 +157,9 @@
   
   <entry>
     <title type="html"><![CDATA[菜鸟学习C语言----多个空格用一个空格代替]]></title>
-    <link href="http://yoursite.com/blog/2014/08/01/cc01/"/>
+    <link href="http://www.linuxkvm.tk/blog/2014/08/01/cc01/"/>
     <updated>2014-08-01T14:54:43+08:00</updated>
-    <id>http://yoursite.com/blog/2014/08/01/cc01</id>
+    <id>http://www.linuxkvm.tk/blog/2014/08/01/cc01</id>
     <content type="html"><![CDATA[<figure class='code'><figcaption><span>多个空格用一个空格代替</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -187,9 +197,9 @@
   
   <entry>
     <title type="html"><![CDATA[超级终端无法输入命令的问题]]></title>
-    <link href="http://yoursite.com/blog/2014/07/07/cjzdwfsrmldwt/"/>
+    <link href="http://www.linuxkvm.tk/blog/2014/07/07/cjzdwfsrmldwt/"/>
     <updated>2014-07-07T11:54:48+08:00</updated>
-    <id>http://yoursite.com/blog/2014/07/07/cjzdwfsrmldwt</id>
+    <id>http://www.linuxkvm.tk/blog/2014/07/07/cjzdwfsrmldwt</id>
     <content type="html"><![CDATA[<p>今天上午折腾了一下公司的古董级设备fortigate 60B，</p>
 
 <p>找来串口线，找了一台XP（Windows 7上没有超级终端了）。</p>
@@ -204,9 +214,9 @@
   
   <entry>
     <title type="html"><![CDATA[Mysql源码安装]]></title>
-    <link href="http://yoursite.com/blog/2014/07/04/mysqlyuan-ma-an-zhuang/"/>
+    <link href="http://www.linuxkvm.tk/blog/2014/07/04/mysqlyuan-ma-an-zhuang/"/>
     <updated>2014-07-04T17:17:18+08:00</updated>
-    <id>http://yoursite.com/blog/2014/07/04/mysqlyuan-ma-an-zhuang</id>
+    <id>http://www.linuxkvm.tk/blog/2014/07/04/mysqlyuan-ma-an-zhuang</id>
     <content type="html"><![CDATA[<p>操作系统：CentOS 6.4</p>
 
 <p>1.安装依赖包</p>
@@ -345,9 +355,9 @@
   
   <entry>
     <title type="html"><![CDATA[安装Octopress]]></title>
-    <link href="http://yoursite.com/blog/2014/07/04/an-zhuang-octopress/"/>
+    <link href="http://www.linuxkvm.tk/blog/2014/07/04/an-zhuang-octopress/"/>
     <updated>2014-07-04T17:01:00+08:00</updated>
-    <id>http://yoursite.com/blog/2014/07/04/an-zhuang-octopress</id>
+    <id>http://www.linuxkvm.tk/blog/2014/07/04/an-zhuang-octopress</id>
     <content type="html"><![CDATA[<p>RVM</p>
 
 <figure class='code'><figcaption><span>RVM</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
