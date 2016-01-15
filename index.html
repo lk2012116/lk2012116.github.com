@@ -9,7 +9,18 @@
   <meta name="author" content="北漂一族">
 
   
-  <meta name="description" content="">
+  <meta name="description" content="下载并安装Ruby 1
+2
+3
+4
+5
+6
+7
+8
+9
+# 下载ruby 1.9.3
+wget https://cache.ruby-lang.org/pub/ruby/1.9/ruby-1.9.3-p551.tar.bz2 # bash 安装ruby 1.9.3
+tar -jxvf ruby-1 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -94,7 +105,30 @@
   </header>
 
 
-  <div class="entry-content"></div>
+  <div class="entry-content"><p>下载并安装Ruby</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c"># 下载ruby 1.9.3</span>
+</span><span class='line'>wget https://cache.ruby-lang.org/pub/ruby/1.9/ruby-1.9.3-p551.tar.bz2
+</span><span class='line'>
+</span><span class='line'><span class="c"># bash 安装ruby 1.9.3</span>
+</span><span class='line'>tar -jxvf ruby-1.9.3-p551.tar.bz2
+</span><span class='line'><span class="nb">cd </span>ruby-1.9.3-p551/
+</span><span class='line'>./configure --prefix<span class="o">=</span>/usr/local/ruby
+</span><span class='line'>make -j4
+</span><span class='line'>make install
+</span></code></pre></td></tr></table></div></figure>
+
+
+</div>
   
   
     <footer>
@@ -388,15 +422,12 @@
 
   <div class="entry-content"><p>今天上午折腾了一下公司的古董级设备fortigate 60B，</p>
 
-<p>找来串口线，找了一台XP（Windows 7上没有超级终端了）。</p>
-
-<p>打开超级终端，新建连接，选择每秒位数9600，确定，等了一会启动界面出来</p>
-
-<p>然后输入用户名，输入不了，于是百度，原来数据流控制不能使用硬件，而应该选择无</p>
-
-<p>于是重新建立连接，在选择每秒位数的同时，选择数据流控制为无，然后就能正常使用了</p>
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2014/07/07/cjzdwfsrmldwt/">阅读全文 &rarr;</a>
+    </footer>
   
 
 
@@ -430,7 +461,16 @@
   </header>
 
 
-  <div class="entry-content"></div>
+  <div class="entry-content"><p>操作系统：CentOS 6.4</p>
+
+<p>1.安装依赖包</p>
+
+<figure class='code'><figcaption><span>安装依赖包</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>yum -y install ncurses-devel openssl openssl-devel cmake
+</span></code></pre></td></tr></table></div></figure>
+
+
+</div>
   
   
     <footer>

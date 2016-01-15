@@ -4,7 +4,7 @@
   <title><![CDATA[^北^漂^一^族]]></title>
   <link href="http://www.linuxkvm.tk/atom.xml" rel="self"/>
   <link href="http://www.linuxkvm.tk/"/>
-  <updated>2016-01-15T13:47:50+08:00</updated>
+  <updated>2016-01-15T13:52:39+08:00</updated>
   <id>http://www.linuxkvm.tk/</id>
   <author>
     <name><![CDATA[北漂一族]]></name>
@@ -18,10 +18,7 @@
     <link href="http://www.linuxkvm.tk/blog/2016/01/15/an-zhuang-octopress/"/>
     <updated>2016-01-15T13:35:00+08:00</updated>
     <id>http://www.linuxkvm.tk/blog/2016/01/15/an-zhuang-octopress</id>
-    <content type="html"><![CDATA[<!-- more -->
-
-
-<p>下载并安装Ruby</p>
+    <content type="html"><![CDATA[<p>下载并安装Ruby</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -42,6 +39,9 @@
 </span><span class='line'>make -j4
 </span><span class='line'>make install
 </span></code></pre></td></tr></table></div></figure>
+
+
+<!-- more -->
 
 
 <p>添加环境变量，向/etc/profile添加一下3行</p>
@@ -338,6 +338,9 @@
     <id>http://www.linuxkvm.tk/blog/2014/07/07/cjzdwfsrmldwt</id>
     <content type="html"><![CDATA[<p>今天上午折腾了一下公司的古董级设备fortigate 60B，</p>
 
+<!-- more -->
+
+
 <p>找来串口线，找了一台XP（Windows 7上没有超级终端了）。</p>
 
 <p>打开超级终端，新建连接，选择每秒位数9600，确定，等了一会启动界面出来</p>
@@ -353,16 +356,16 @@
     <link href="http://www.linuxkvm.tk/blog/2014/07/04/mysqlyuan-ma-an-zhuang/"/>
     <updated>2014-07-04T17:17:18+08:00</updated>
     <id>http://www.linuxkvm.tk/blog/2014/07/04/mysqlyuan-ma-an-zhuang</id>
-    <content type="html"><![CDATA[<!-- more -->
-
-
-<p>操作系统：CentOS 6.4</p>
+    <content type="html"><![CDATA[<p>操作系统：CentOS 6.4</p>
 
 <p>1.安装依赖包</p>
 
 <figure class='code'><figcaption><span>安装依赖包</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='bash'><span class='line'>yum -y install ncurses-devel openssl openssl-devel cmake
 </span></code></pre></td></tr></table></div></figure>
+
+
+<!-- more -->
 
 
 <p>2.用户设置</p>
