@@ -1,0 +1,52 @@
+@myColor:#33dd55;
+@bColor:#999;
+.myStyle(@c:@myColor){
+  color: @c;
+}
+.myh2(@m){
+  color: @m;
+}
+.h2{
+  .myh2(#fff);
+}
+header{
+  .myStyle();
+  h1{color: @bColor;}
+  h2{color: #333;
+    a{color: #0f0;
+      &:hover{color: #f00;}
+    }
+  }
+}
+//引导模式
+.mixin(@a) when(lightness(@a)>50%){
+  background-color: black;
+}
+.mixin(@a) when(lightness(@a)<=50%){
+  background-color: white;
+}
+section h2{
+  .mixin(#887);
+  .myh2(#f00)
+}
+article{
+  background-color: @bColor;
+  h3{
+    color: white;
+    small{
+      font-size: small;
+    }
+  }
+  section{
+    background-color: @myColor;
+    p{
+      font-size: large;
+    }
+    aside{
+      background-color: #1b6d85;
+      a{
+        .mixin(#887;)
+      }
+    }
+  }
+}

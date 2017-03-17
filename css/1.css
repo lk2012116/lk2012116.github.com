@@ -1,0 +1,43 @@
+.h2 {
+  color: #ffffff;
+}
+header {
+  color: #33dd55;
+}
+header h1 {
+  color: #999999;
+}
+header h2 {
+  color: #333;
+}
+header h2 a {
+  color: #0f0;
+}
+header h2 a:hover {
+  color: #f00;
+}
+section h2 {
+  background-color: white;
+  color: #ff0000;
+}
+article {
+  background-color: #999999;
+}
+article h3 {
+  color: white;
+}
+article h3 small {
+  font-size: small;
+}
+article section {
+  background-color: #33dd55;
+}
+article section p {
+  font-size: large;
+}
+article section aside {
+  background-color: #1b6d85;
+}
+article section aside a {
+  background-color: white;
+}
