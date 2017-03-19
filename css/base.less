@@ -1,22 +1,42 @@
 @import "bootstrap.less";
+
 @imgbase: '../img';
 @baseblue: #0071c5;
+@baselightblue: #00aeef;
 
-body{
-  font-family: "SimHei","SimSun",Arial,sans-serif;
-  padding-top: 50px;
+body {
+  font-family: "SimHei", "SimSun", Arial, sans-serif;
+  padding-top: 60px;
 }
+
 .navbar {
   background-color: @baseblue;
   border-color: #005ea4;
-  border-bottom: 3px solid rgba(0,80,146,0.75);
+  border-bottom: 3px solid rgba(0, 80, 146, 0.75);
   .dropdown-menu {
     background-color: @baseblue;
+    li>a{
+      display: block;
+      line-height: 48px;
+      padding: 3px 20px;
+      white-space: nowrap;
+      clear: both;
+      &:hover{
+        background-color: @baselightblue;
+      }
+    }
+    .divider{
+      margin: 0 10px;
+      overflow: hidden;
+      background-color: #005aa2;
+    }
   }
-  a{
+  a {
     color: #fff;
+    text-decoration: none;
   }
 }
+
 .navbar .navbar-brand {
   width: 64px;
   height: 42px;
@@ -25,59 +45,64 @@ body{
   margin-right: 10px;
   background: url('@{imgbase}/hdr-spr.png') no-repeat 0 -512px;
 }
+
 .navbar-nav li {
-  &.active,&:hover{
+  &.active, &:hover {
     background-color: #0081d6 !important;
   }
   a {
     color: #fff !important;
+    text-decoration: none;
   }
 }
 
-
-.main{
+.main {
   color: white;
   background-color: #0062a8;
   min-height: 600px;
 }
 
-.footer{
+.footer {
   padding-bottom: 25px;
   background-color: #f3f3f3;
   min-height: 300px;
 }
+
 .footer li {
   line-height: 2.4em;
   a {
     color: #4B85D1;
+    text-decoration: none;
   }
 }
 
-.half-mask{
-  background-color: rgba(0,0,0,0.7);
+.half-mask {
+  background-color: rgba(0, 0, 0, 0.5);
   height: 100%;
-  width: 92.3%;
+  width: 92.4%;
   position: absolute;
   top: 73%;
   left: 15px;
   padding: 15px;
   margin: 0 auto;
-  a{
+  a {
     color: #90D6F0;
+    text-decoration: none;
   }
-  &:hover{
+  &:hover {
     top: 0;
     transition: top 200ms;
   }
 }
 
-.masktext-parent{
+.masktext-parent {
   background-color: @baseblue;
   position: relative;
 
 }
+
 @media screen and (min-width: 768px) {
-  .masktext{
+  .masktext {
     position: absolute;
     bottom: 20px;
     left: 15px;
@@ -85,11 +110,28 @@ body{
     padding: 0 15px;
   }
 }
+
 @media screen and (max-width: 768px) {
-  .masktext{
+  .masktext {
     margin-bottom: 15px;
-    padding-bottom: 15px;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding: 0px 15px 15px 15px;
+  }
+  .navbar-nav .open .dropdown-menu > li > a:hover{
+    color: @baselightblue;
   }
 }
+
+.form-control-static {
+  color: #fff;
+}
+.media{
+  padding: 30px 0 30px 30px;
+  background-color: #0071c5;
+  .media-body>ul>li{
+    margin: 5px 0 5px 10px;
+    a:hover{
+      text-decoration: none;
+    }
+  }
+}
+
